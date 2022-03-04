@@ -1,37 +1,103 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" />
     <script src="js/script.js" async></script>
 
     <title>1-SVG</title>
   </head>
   <body>
-
     <h1>Dessiner des formes</h1>
     <h2>Rectangle</h2>
-
+    <svg>
+      <rect
+        id="rectangle"
+        class="red"
+        x="0"
+        y="0"
+        width="400"
+        height="100"
+        fill="red"
+        onclick="onClick(this)"
+      />
+    </svg>
     <h2>Donut</h2>
-
-
+    <svg width="300" height="200" viewBox="0 -11 20 150">
+      <circle class="donut" cx="50" cy="50" r="60" fill="none" stroke="black" />
+      <circle cx="50" cy="50" r="30" fill="none" stroke="black" />
+    </svg>
     <h2>Ligne</h2>
-
-
+    <svg width="300" height="200">
+      <line x1="0" y1="50" x2="11.77" y2="8.83" stroke="red" />
+    </svg>
     <h2>Path</h2>
-
-
+    <svg width="700" height="250">
+      <path
+        d="M 0 150 L 50 0 L 100 150 M 25 75 L 75 75"
+        fill="none"
+        stroke="steelblue"
+      />
+      <path
+        d="M 110 0 C 120 199, 170 199, 180 0 "
+        fill="none"
+        stroke="steelblue"
+      />
+      <path d="M 190 0 L 190 150" fill="none" stroke="steelblue" />
+      <path
+        d=" M 190 0 C 270 10, 270 140, 190 150"
+        fill="none"
+        stroke="steelblue"
+      />
+      <path d="M 270 0 L 270 150" fill="none" stroke="steelblue" />
+      <path
+        d=" M 270 0 C 350 5, 350 70, 270 75"
+        fill="none"
+        stroke="steelblue"
+      />
+      <path d="M 270 75 L 330 150" fill="none" stroke="steelblue" />
+      <path
+        d="M 430 0 L 350 0 L 350 150 L 430 150"
+        fill="none"
+        stroke="steelblue"
+      />
+      <path d="M 350 75 L 400 75" fill="none" stroke="steelblue" />
+      <path d="M 450 150 L 530 0" fill="none" stroke="steelblue" />
+      <path d="M 490 75 L 450 0" fill="none" stroke="steelblue" />
+    </svg>
     <h1>Animer des formes</h1>
 
     <h2>On click</h2>
 
     <h2>On hover</h2>
 
-    <h2>Prenez la première lettre de votre prénom que vous avez créée ci-dessus. Faite bouger une forme de votre choix le long de la lettre</h2>
+    <h2>
+      Prenez la première lettre de votre prénom que vous avez créée ci-dessus.
+      Faite bouger une forme de votre choix le long de la lettre
 
+      <svg width="700" height="250">
+        <path
+          d="M 0 150 L 50 0 L 100 150 M 25 75 L 75 75"
+          fill="none"
+          stroke="steelblue"
+          id="theMotionPath"
+        />
+        <!-- Cercle rouge qui sera déplacé le long du chemin. -->
+        <circle cx="" cy="" r="5" fill="red">
+          <!-- Définit l'animation -->
+          <animateMotion dur="6s" repeatCount="indefinite">
+            <mpath xlink:href="#theMotionPath" />
+          </animateMotion>
+        </circle>
+      </svg>
 
+      https://developer.mozilla.org/fr/docs/Web/SVG/Element/animateMotion 
+    </h2>
   </body>
 </html>
