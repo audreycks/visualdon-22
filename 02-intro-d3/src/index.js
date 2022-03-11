@@ -1,7 +1,6 @@
-import * as d3 from 'd3';
+import * as d3 from "d3";
 
 // C'est ici que vous allez écrire les premières lignes en d3!
-
 const WIDTH = 400;
 const HEIGHT = 400;
 
@@ -39,6 +38,13 @@ const text2 = d3.select("body").append("p").text("cercle2");
 
 const text3 = d3.select("body").append("p").text("cercle3");
 
+const circle = div.selectAll('circle')
+.on('click', ()  => {
+   cx = cx+50
+  circle.attr('cx', cx)
+})
+
+
 
 //© solution prise sur https://observablehq.com/@idris-maps/introduction-a-d3?collection=@idris-maps/heig-visdom-2020 
 const data = [20, 5, 25, 8, 15];
@@ -57,4 +63,3 @@ const div2 = d3.select("div").append("svg").append("rect")
   .attr("y", (d) => HEIGHT - d)
   // la hauteur
   .attr("height", (d) => d);
-
