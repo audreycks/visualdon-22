@@ -11,6 +11,17 @@ Promise.all([
   // Do your stuff. Content of both files is now available in stations and svg
   console.log([posts]);
   console.log([users]);
+  
+/*
+    users.forEach(user => {
+      posts.filter(post => post.userId == user.id)
+      d3.select(".posts").append("p").text(user.name);
+    })
+
+    posts.forEach(post => {
+      
+      d3.select(".texte").append("p").text(post.name);
+  })
 
   const div3 = d3.select("div");
   div3.selectAll("div")
@@ -27,4 +38,4 @@ Promise.all([
       .enter()
       .append("p")
       .text(function(d) {return d.title;}); 
-});
+});*/
